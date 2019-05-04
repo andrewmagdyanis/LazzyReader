@@ -13,6 +13,7 @@ from gtts import gTTS
 import os
 
 ############################################################################################################
+#function to extract the string from the image:
 def get_string(image_name):
 # Read image as grayscale image
     img = cv2.imread(image_name+".png",0)
@@ -35,7 +36,8 @@ def get_string(image_name):
 # Recognize text with tesseract for python
     result = pytesseract.image_to_string(Image.open(image_name+"after_noise_releasing.png"))
     return result
-
+############################################################################################################
+#The main function
 if __name__ == "__main__":
 # Print the string extracted from the image:
     image_name = input('please enter the name of the image: \n ')
